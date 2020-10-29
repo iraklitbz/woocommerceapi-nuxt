@@ -35,6 +35,11 @@
   </div>
 
   <ul class="grid gap-md">
+    <!-- AQUI -->
+    <li v-for="(item, key) in data" :key="key">
+      {{ item.name }}
+    </li>
+
     <li class="js-grid-switch__item">
 
       <div class="card-v10 card-v10--state-1 height-100% js-grid-switch__content">
@@ -227,35 +232,24 @@
 
 <script>
 import { gridSwitch } from './../plugins/GridSwitch.js'
+
 export default {
-  data(){
-    return {
-      Wdata:[],
-      products: [],
-    }
-  },
   async asyncData({ $woocomerceApi }) {
     try {
       const { data } = await $woocomerceApi.get('products')
 
       return {
-        Wdata:data
+        data
       }
     } catch (err) {
       console.log(err)
     }
   },
-  created(){
-    this.products = Object.keys(this.Wdata).map((key) => {
-     return this.Wdata[key]
-   });
-   console.log(this.products)
-  },
-  mounted(){
-    gridSwitch();
+  mounted() {
+    gridSwitch()
   },
   destroyed() { // remove the JS code once the component has been destroyed
-    gridSwitch();
+    gridSwitch()
   }
 }
 </script>
