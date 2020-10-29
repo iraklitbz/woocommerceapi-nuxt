@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-US" class="lt-ie9 ie9" {{ HTML_ATTRS }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html {{ HTML_ATTRS }}>
+<!--<![endif]-->
+
+<head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+    <script>
+        document.getElementsByTagName("html")[0].className += " js";
+    </script>
+</head>
+
+<body {{ BODY_ATTRS }}>
+    {{ APP }}
+    <script src="https://unpkg.com/codyhouse-framework/main/assets/js/util.js"></script>
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+</body>
+
+
+</html>
